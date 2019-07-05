@@ -1,0 +1,32 @@
+//cheef and mean
+
+#include<stdio.h>
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+		long long n;
+		scanf("%lld",&n);
+		long long i;
+		long long int sum = 0,a[n];
+		for(i = 0 ; i < n ;i++){
+			scanf("%lld",&a[i]);
+			sum = sum + a[i];
+		}
+		long long mean = sum / n;
+
+		long long  res = -1;
+		for(i = 0 ; i < n ;i++){
+			if(mean == a[i]){
+				res = i+1;
+				break;
+			}
+		}
+		if(res == -1)
+			printf("Impossible\n");
+		else if(mean * n != sum)
+			printf("Impossible\n");
+		else
+			printf("%lld\n",res);	
+	}
+}
