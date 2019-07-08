@@ -1,0 +1,63 @@
+//min max july long
+
+#include<iostream>
+
+using namespace std;
+
+int pow(int x , int y){
+	int i,res = 1;
+	for(i = 0 ; i < y ;i++){
+		res = res * x;
+	}
+	return res;
+}
+
+
+//main function
+int main(){
+	int t;
+	cin>>t;
+	while(t--){		
+		int arr[131072];
+		arr[0] = 0;
+		arr[1] = 1;
+		int k = 1;
+		int i = 0,j;
+		while (i < 131073){
+			for(j = pow(2 , k) ; j <pow(2 , k+1) ; j++){
+				arr[j] = arr[j - pow(2 , k)] + 1;		
+			}
+			k++;
+			i = pow(2 , k) + 1;	
+		}
+		int q;
+		cin>>q;
+		int odd = 0,even = 0;
+		while(q--){
+			int com;
+			cin>>com;
+			if(arr[com] != -1){
+				if(arr[com] % 2 == 0)
+					even++;
+				else
+					odd++;	
+				arr[com] = -2;
+				for(i = 0 ;i < 131073;i++){
+					if(arr[i] == -1){
+						if(arr[i ^ com] != -1){
+												
+							if(arr[i ^ com] % 2 ==0)
+								even++;
+							else
+								odd++;	
+							arr[i ^ com] = -1;
+						}
+					}
+				}
+				arr[com] = -1; 
+			}
+			cout<<even<<" "<<odd<<"\n";
+			
+		}
+	}
+}
