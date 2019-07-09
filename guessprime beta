@@ -1,10 +1,11 @@
 //guess prime
 
 #include<iostream>
+#include<cstring>
 
 using namespace std;
 
-int arr[1229];
+int arr[9592];
 int j = 0;
 
 bool isPrime(int n){ 
@@ -35,7 +36,7 @@ void setPrime(int n)
 } 
 
 int main(){
-	setPrime(10000);
+	setPrime(100000);
 	int t;
 	cin>>t;
 	int m;
@@ -49,7 +50,7 @@ int main(){
 		int var1 = x * x;
 		int var2 = x*x - y;			
 		int i;
-		for(i = 0 ; i < 1229 ;i++){
+		for(i = 0 ; i < 9592 ;i++){
 			if(var2  == (var1/arr[i]) * arr[i]){
 				res1[k++] = arr[i];	
 			}
@@ -65,14 +66,14 @@ int main(){
 		var1 = x * x;
 		var2 = x*x - y;			
 		
-		for(i = 0 ; i < 1229 ;i++){
+		for(i = 0 ; i < 9592 ;i++){
 			if(var2  == (var1/arr[i]) * arr[i]){
 				res2[l++] = arr[i];	
 			}
 		}		
 			
 			
-		char ans[4];
+		char ans[10];
 		int res;
 		for(int i = 0 ; i < k; ++i) {
 			for (int j = 0 ; j < l; ++j) {
