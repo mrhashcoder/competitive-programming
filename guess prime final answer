@@ -56,6 +56,8 @@ int main(){
 		}
 	}
 }
+// function to create array of prime factors
+
 
 void function(long long int n,long long int arr[]) 
 { 
@@ -101,6 +103,8 @@ long long int sqrt(long long int x)
     } 
     return i - 1; 
 } 
+
+//function to find next no for query
 
 long long int findno(long long int arr[],long long int temp[]){
 	long long int a = sqrt(arr[count]) + 1;
