@@ -107,7 +107,7 @@ long long int sqrt(long long int x)
 //function to find next no for query
 
 long long int findno(long long int arr[],long long int temp[]){
-	long long int a = sqrt(arr[count]) + 1;
+	long long int a = sqrt(arr[count-1]) + 1;
 	long long int i,j;
 	while(1){
 		for(i = 0 ; i < count ;i++){
@@ -118,9 +118,10 @@ long long int findno(long long int arr[],long long int temp[]){
 		for(i = 0 ; i < count ;i++){
 			for(j = 0 ; j < count ;j++){
 				if(i != j){
-					if(temp[i] == temp[j])
+					if(temp[i] == temp[j]){
 						flag = 0;
 						break;
+					}
 				}
 			}	
 		}
